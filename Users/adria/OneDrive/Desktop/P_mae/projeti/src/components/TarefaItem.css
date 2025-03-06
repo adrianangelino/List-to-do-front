@@ -1,0 +1,153 @@
+/* Estilo geral da página */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Coloca os itens no topo da tela */
+  height: 100vh;
+  background-image: linear-gradient(135deg, #6a1b9a, #2196f3); /* Gradiente de roxo para azul */
+  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+/* Container que agrupa as tarefas */
+.tarefa-list {
+  display: flex;
+  flex-direction: column; /* Tarefas em uma coluna */
+  justify-content: flex-start;
+  align-items: center; /* Centraliza os cards */
+  gap: 20px;
+  padding: 20px;
+  width: 100vw; /* Agora ocupa 100% da largura da tela */
+  max-width: 100%;
+  height: calc(100vh - 40px); /* Ocupa a altura restante da tela, considerando o padding */
+  box-sizing: border-box;
+  overflow-y: auto; /* Permite rolar verticalmente se necessário */
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Estilo geral do item de tarefa */
+.tarefa-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px; /* Largura máxima para os cards */
+  min-height: 350px; /* Tamanho mínimo do card */
+  box-sizing: border-box; /* Garante que o padding não ultrapasse o tamanho do card */
+  overflow: hidden;
+}
+
+/* Efeito de hover nos cards */
+.tarefa-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título da tarefa */
+.tarefa-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Descrição da tarefa */
+.tarefa-item p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Exibe a observação no card */
+.observacao-texto {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 10px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Estilo dos botões de ação */
+.tarefa-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Botões (Realizada, Excluir, Enviar) */
+.tarefa-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Botão "Realizada" */
+.realizada-btn {
+  background-color: #28a745;
+  width: auto;
+}
+
+.realizada-btn:hover {
+  background-color: #218838;
+}
+
+/* Botão "Excluir" */
+.excluir-btn {
+  background-color: #dc3545;
+  width: auto;
+}
+
+.excluir-btn:hover {
+  background-color: #c82333;
+}
+
+/* Botão "Enviar" */
+.enviar-btn {
+  background-color: #007bff;
+  width: auto;
+}
+
+.enviar-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Quando a tarefa for marcada como realizada */
+.tarefa-item.realizada {
+  background-color: #d4edda;
+  border-color: #155724;
+  box-shadow: 0 6px 15px rgba(0, 128, 0, 0.2);
+}
+
+/* Estilização do campo de observação */
+.observacao-input {
+  width: 100%;
+  padding: 12px;
+  min-height: 60px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f7f7f7;
+  transition: border-color 0.3s ease;
+}
+
+.observacao-input:focus {
+  border-color: #28a745;
+  outline: none;
+}
